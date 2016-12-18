@@ -4,7 +4,7 @@ echo -e "togglescreen version 1.0\nToggle monitors on and off easily\n"
 
 case $1 in
   -t)
-    if [[ $(xrandr|grep -P "$2 connected (primary\s)?[0-9]{4}x[0-9]{4}\+[0-9]{1,4}\+[0.9]{1,4}") && -z "$3" ]]; then
+    if [[ $(xrandr|grep -P "$2 connected (primary\s)?[0-9]{4}x[0-9]{4}\+[0-9]{1,4}\+[0.9]{1,4}") ]]; then
       echo "$2 is enabled, turning off..."
       xrandr --output $2 --off
     else
